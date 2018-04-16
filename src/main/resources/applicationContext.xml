@@ -3,11 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--bean id="pageController" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <description>redirect Path "/" to "/index.jsp"</description>
-        <property name="prefix" value="/WEB-INF/" />
-        <property name="suffix" value=".jsp" />
-    </bean-->
+    <!--
+        Error: ServletContextTemplateResolver]: No default constructor found
+        replace
+            ServletContextTemplateResolver
+        with
+            SpringResourceTemplateResolver"
+     -->
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="classpath:/template/"/>
         <property name="suffix" value=".html" />
