@@ -8,6 +8,10 @@ Framework: Spring Boot, Maven, Thymeleaf
 Utilities: Log4j
 
 ### Progress
+* v0.2
+An embedded auth implemented.
+Interceptor not completed.
+
 * v0.1  
     实现前端登录界面和 Word Ladder 服务界面，后台利用 ModelAndView 实现页面跳转和数据动态注入  
     TODO -\> 前端登录加密传输，后台拦截Word Ladder服务，验证是否登录
