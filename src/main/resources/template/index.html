@@ -3,21 +3,51 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
+    <!--script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script>
+        // var request = null;
+        function signin ( url ) {
+            var username = document.getElementById("user_name");
+            var pwd = document.getElementById("password");
+            console.log("user name: " + username.value);
+            console.log("password: " + pwd.value);
+            var encodedpwd = escape(username + pwd.value);
+            // var url = "http://localhost:8080/login";
+            var request = new XMLHttpRequest();
+            request.open("POST", url, true);
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    if (request.readyState === 200) {
+                        console.log(request.readyState);
+                    } else {
+                        console.log(request.readyState);
+                    }
+                } else {
+                    console.log("HTTP request continuing...");
+                }
+            }
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;");
+            request.send("username=" + username + "&pwd=" + encodedpwd);
+        }
+    </script-->
 </head>
 <body>
     <div class="WLController">
-        <p th:text="${greet}">Welcome to try Word Ladder!</p>
         <p>This is a welcome page.</p>
+        <p th:text="${greet}">Welcome to try Word Ladder!</p>
         <form action="login" method="post">
             <p>
                 <em>Username: </em>
-                <input type="text" name="username" placeholder="用户名"/>
+                <input id="user_name" type="text" name="username" placeholder="用户名"/>
             </p>
             <p>
                 <em>Password: </em>
-                <input type="password" name="pwd" placeholder="密码"/>
+                <input id="password" type="password" name="pwd" placeholder="密码"/>
             </p>
-            <input type="submit" value="Login"/>
+            <input type="submit" value="Login" />
         </form>
         <!--form action="wordladder" method="get">
             <p><em>Begin: </em><input type="text" name="beg"/></p>
