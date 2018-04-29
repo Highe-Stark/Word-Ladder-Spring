@@ -7,7 +7,26 @@ This Repository is a web providing word ladder service.
 Framework: Spring Boot, Maven, Thymeleaf  
 Utilities: Log4j
 
+### Usage
+1. Clone the repository to local disk
+
+2. Clone Auth Server repository to local disk
+
+    `git clone https://github.com/Highe-Stark/Auth`
+3. Setup project in Intellij. Start two project.
+
+4. visit http://localhost:8080/ to login.  
+If you access http://localhost:8080/wordladder without login, you access will be rejected and redirect to errorpage.html.  
+If you revisit http://localhost:8080/ to login again but entered wrong username or password, the state will be invalid.
+
+### Attendtion
+User name: admin  
+Password: 123456  
+
 ### Progress
+* v0.5
+A simple Authantication implemented. Auth server is in another repo, https://github.com/Highe-Stark/Auth.  
+
 * v0.2
 An embedded auth implemented.
 Interceptor not completed.
