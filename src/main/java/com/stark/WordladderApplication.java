@@ -1,4 +1,4 @@
-package com.stark.wordladder;
+package com.stark;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

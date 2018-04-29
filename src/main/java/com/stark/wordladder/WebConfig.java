@@ -8,11 +8,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Component
+@Configuration
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
-
-    public void addInterceptor(InterceptorRegistry registry) {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new BeforeLoginInterceptor()).addPathPatterns("/login");
         registry.addInterceptor(new BeforeServiceInterceptor()).addPathPatterns("/wordladder");
     }
